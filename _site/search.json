@@ -1,10 +1,10 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Posts",
     "section": "",
-    "text": "I am a sixth year PhD candidate in the Quantitative Ecology and Resource Management program at the University of Washington. My research focuses on applying spatiotemporal statistical models to questions in fisheries management and ecology. In particular, I am developing models for indices of abundance that include fishery-dependent observations. I am also interested in improving the computational efficiency and reliability of Bayesian model fits through the application of advanced Markov chain Monte Carlo tools like the No-U-Turn Sampler. Prior to graduate school I worked in aviation maintenance and the outdoor industry."
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhyak\n\n\nR\n\n\n\n\nHow to compile the rgdal package and its dependencies.\n\n\n\n\n\n\nNov 3, 2020\n\n\nJohn Best\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nhyak\n\n\n\n\nNOTE: This information was accurate as of early 2020, but is now (April 2022) slightly out of date; e.g. the klone cluster is now available and interactive nodes are no longer a separate partition.\n\n\n\n\n\n\nFeb 24, 2020\n\n\nJohn Best\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQERM 597 Seminar\n\n\n\n\nQERM\n\n\nwebsite\n\n\n\n\nUse Git, GitHub, and blogdown to publish an example website on GitHub Pages\n\n\n\n\n\n\nJan 28, 2020\n\n\nJohn Best\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhyak\n\n\nR\n\n\n\n\nFirst, request a build node, which will have internet access. An hour of time should be enough to install R and a few packages. Building R (especially the suggested packages) can be sped up by using multiple build jobs.\n\n\n\n\n\n\nJan 10, 2020\n\n\nJohn Best\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -14,67 +14,74 @@
     "text": "When I’m not working I spend time with my family, play with my dog, run, and learn about whatever new and exciting hobby I’ve more recently found."
   },
   {
-    "objectID": "cv.html",
-    "href": "cv.html",
-    "title": "Positive Definite Ecology",
+    "objectID": "posts/compiling-r-with-mkl-on-hyak/compiling-r-with-intel-compilers-and-mkl-on-hyak.html",
+    "href": "posts/compiling-r-with-mkl-on-hyak/compiling-r-with-intel-compilers-and-mkl-on-hyak.html",
+    "title": "Compiling R with Intel compilers and MKL on Hyak",
     "section": "",
-    "text": "Publications\n\n\n\n/tmp/RtmpEmRn4e/file2c986142bdc62.yaml\n\n\n\n\n\nFunding\n\n\n# A tibble: 1 × 5\n  what                           when    with                       where why   \n  <chr>                          <chr>   <chr>                      <chr> <list>\n1 Improving spatiotemporal indi… 2019 -… NMFS-Sea Grant Joint Fell… $120… <chr …\n\n\n\n\nService\n\nServed as peer reviewer for Fisheries Research, ICES Journal of Marine Sciences, Progress in Oceanography, and Aquatic Ecology\nCo-organizer of the 2022 University of Washington College of the Environment Research Derby\nCo-organizer of the University of Washington Department of Statistics Spatiotemporal Reading Group\n\n\n\nTalks\n\n\n# A tibble: 11 × 5\n   what                         when       with                where      why   \n   <chr>                        <chr>      <chr>               <chr>      <list>\n 1 Fishery-dependent data in a… March 28,… CAPAM Spatio-tempo… La Jolla,… <chr …\n 2 Standardizing spatially exp… July 5, 2… International Stat… St. Andre… <chr …\n 3 Nonstationarity in spatiote… July 30, … Joint Statistical … Vancouver… <chr …\n 4 Reparameterizing Bayesian s… November … Think Tank          Seattle, … <chr …\n 5 Combining Fishery-independe… October 2… Think Tank          Seattle, … <chr …\n 6 Parameterizations for Bayes… November … SAFS Graduate Stud… Seattle, … <chr …\n 7 Catchability as a spatiotem… November … SAFS Graduate Stud… Seattle, … <chr …\n 8 An index of abundance combi… July 16, … Statistics 2021 Ca… Montreal,… <chr …\n 9 An index of abundance combi… September… World Fisheries Co… Adelaide,… <chr …\n10 Spatially varying catchabil… November … SAFS Graduate Stud… Seattle, … <chr …\n11 Spatially varying catchabil… December … 2022 Sea Grant-NMF… (v)        <chr …"
+    "text": "Build and install R\nThis part is pretty easy once configuration is complete. The -j flag can be used to specify the maximum number of parallel jobs to run. This should be equal to the --cpus-per-task specified when you requested the build node.\nmake -j8\nInstallation can be accomplised using\nmake install\nFinally, add the R and Rscript executables to your PATH.\n\n\nTesting the installation\nIn order to use multiple cores on a compute node, the --cpus-per-task flag must be greater than one. Note that --tasks-per-node does not allow multiple threads to be used by a single process. Watching CPU usage with e.g. htop will tell you if multithreaded linear algebra is working. So, using an interactive compute node (such as stf-int) open your newly-compiled version of R and running\nX <- matrix(rnorm(5000 * 5000), nrow = 5000)\nt(X) %*% X\nYou should see multiple CPUs being used at 100% in htop. If only one CPU is maxed out, something went wrong."
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "objectID": "posts/qerm-website-prep/qerm-website-prep.html",
+    "href": "posts/qerm-website-prep/qerm-website-prep.html",
+    "title": "Set up a website for GitHub Pages",
     "section": "",
-    "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "We would like everyone to run a few steps before class on Wednesday so that we can concentrate on the interesting parts such as customization and personalization. We will be following the steps outlined in the presentations from the Summer of blogdown slides by Alison Hill of RStudio. We will deviate from these by using GitHub pages for hosting rather than Netlify. We’ll be happy to explain the advantages and disadvantages of each in class if anyone is interested. The blogdown package uses the static site generator Hugo (we will explain what this means in class)"
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "posts/qerm-website-prep/qerm-website-prep.html#prerequisites",
+    "href": "posts/qerm-website-prep/qerm-website-prep.html#prerequisites",
+    "title": "Set up a website for GitHub Pages",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nBecause we are hosting on GitHub Pages, we need to create two separate repositories. We will following the instructions from Hugo. First we will create a repository to contain the files that we edit to change the website. On GitHub, create an empty (no README or .gitignore) repository named website.\nThe second repository will hold the rendered version of the site. The name of this repository does matter; it must be USER.github.io (where USER is your GitHub username). This should also be an empty repository.\nCreate a directory named website and initialize a Git repository.\nmkdir website\ncd website\ngit init\nThen tell Git how to find the corresponding GitHub repository.\ngit remote add origin https://github.com/USER/website.git\nNow open R with website as your working directory (you can check this with getwd).\nWe will be using the blogdown package to simplify the creation of our website. So the first step is to install blogdown if it is not already installed. As usual, this can be done with\n\ninstall.packages(\"blogdown\")\n\nEvery time we want to use blogdown after this, we can use\n\nlibrary(blogdown)\n\nOnce blogdown is installed, we need to install Hugo, our static site generator. blogdown makes this easy; just run (in R)\n\ninstall_hugo()\n\nThe blogdown package also includes update_hugo and hugo_version functions."
+  },
+  {
+    "objectID": "posts/qerm-website-prep/qerm-website-prep.html#create-the-website",
+    "href": "posts/qerm-website-prep/qerm-website-prep.html#create-the-website",
+    "title": "Set up a website for GitHub Pages",
+    "section": "Create the website",
+    "text": "Create the website\nNow we can create the website. I will use the Academic theme, which I use for my personal website. There are many, many others to choose from.\nAgain, blogdown provides a convenient way to start a new site.\n\nnew_site(theme = \"gcushen/hugo-academic\",\n         sample = TRUE,\n         theme_example = TRUE,\n         empty_dirs = TRUE,\n         to_yaml = TRUE)\n\nThis should open your browser to the example site.\n\n\n\nIf it doesn’t open automatically, you can go to https://localhost:4321. In the future, any time you’re in the working directory for your website, you can use the blogdown::serve_site function to do the same thing. This will live-reload any time you make changes."
+  },
+  {
+    "objectID": "posts/qerm-website-prep/qerm-website-prep.html#set-up-the-git-structure",
+    "href": "posts/qerm-website-prep/qerm-website-prep.html#set-up-the-git-structure",
+    "title": "Set up a website for GitHub Pages",
+    "section": "Set up the Git structure",
+    "text": "Set up the Git structure\nThe rest of these instructions are in the terminal (i.e., not in R) and assume that you are starting from the website directory.\nThe public subdirectory of website contains the HTML of our rendered website. This needs to be uploaded to your USER.github.io GitHub repository. At the terminal, starting from the website directory, we want to:\n\nchange to the public subdirectory;\ninitialize a Git repository;\nadd the GitHub remote;\nstage all the files;\ncommit them;\nand push them to GitHub.\n\nThis can be accomplished by running\ncd public\ngit init\ngit remote add origin https://github.com/USER/USER.github.io.git\ngit add .\ngit commit -m \"Intialize with rendered example site\"\ngit push -u origin master\nWe also want to track the rest of the files in website, because these are the ones we edit by hand to change the content of the website. To do this, we\n\nchange back to the website directory;\nadd the public directory as a submodule (a Git repository within a Git repository);\nstage everything;\ncommit everything;\nand push it up to GitHub.\n\ncd ..\ngit submodule add -b master https://github.com/USER/USER.github.io.git public\ngit add .\ngit commit -m \"Initialize with Academic example site\"\ngit push -u origin master\nYou should now see files in the repositories you pushed to on GitHub. If you pushed to the USER.github.io directory, you should also see the example site at https://USER.github.io. We will personalize these sites in class on Wednesday."
+  },
+  {
+    "objectID": "posts/down-the-rgdal-rabbit-hole/down-the-rgdal-rabbit-hole.html",
+    "href": "posts/down-the-rgdal-rabbit-hole/down-the-rgdal-rabbit-hole.html",
+    "title": "Down the rgdal rabbit hole",
     "section": "",
-    "text": "This is a post with executable code."
+    "text": "I have a package that depends on INLA, which has recently begun failing to load if rgdal isn’t installed correctly. rgdal can’t be installed without the GDAL library, which requires PROJ, which requires SQLite. I needed to install all of these on our cluster without root access. That meant compiling each one to a non-standard location, then ensuring that the next in the sequence knew where this was. It also meant that if I missed an option in, say SQLite, I had to start from the bottom and recompile everything."
   },
   {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "About",
-    "section": "Education",
-    "text": "Education\nUniversity of Washington | Seattle, WA PhD in Quantitative Ecology & Resource Management | August 2016 -\nUniversity of Alaska Fairbanks | Fairbanks, AK MS in Statistics | September 2014 - May 2016\nClarkson University | Potsdam, NY BS in Biology & Physics | September 2004 - May 2008"
+    "objectID": "posts/down-the-rgdal-rabbit-hole/down-the-rgdal-rabbit-hole.html#sqlite",
+    "href": "posts/down-the-rgdal-rabbit-hole/down-the-rgdal-rabbit-hole.html#sqlite",
+    "title": "Down the rgdal rabbit hole",
+    "section": "SQLite",
+    "text": "SQLite\n\nDownload and untar the most recent SQLite amalgamation. I did not use the autoconf version.\nConfigure:\n\n./configure --prefix=/usr/lusers/jkbest/inst/sqlite-3.33.0 \\\n    CFLAGS=\"-DSQLITE_ENABLE_COLUMN_METADATA=1\"\nNote the CFLAGS here. Without that rgdal will fail to install with a message about table_columns or similar and you’ll need to start over from this step (ask me how I know!).\n\nCompile and install:\n\nmake -jN\nmake install\n\nUpdate $PATHs. In your .zshrc, .bashrc or similar, add entries to PATH for bin, LD_LIBRARY_PATH for lib, CPATH for include, and PKG_CONFIG_PATH for lib/pkgconfig. I don’t know which of these mattered, but it didn’t hurt to add them."
   },
   {
-    "objectID": "about.html#experience",
-    "href": "about.html#experience",
-    "title": "About",
-    "section": "Experience",
-    "text": "Experience"
+    "objectID": "posts/down-the-rgdal-rabbit-hole/down-the-rgdal-rabbit-hole.html#proj",
+    "href": "posts/down-the-rgdal-rabbit-hole/down-the-rgdal-rabbit-hole.html#proj",
+    "title": "Down the rgdal rabbit hole",
+    "section": "PROJ",
+    "text": "PROJ\n\nDownload and untar the latest version of PROJ.\nConfigure:\n\n./configure --prefix=$INSTALL_PATH/proj-7.2.0 \\\n    SQLITE3_CFLAGS=-I/usr/lusers/jkbest/inst/sqlite-3.33.0/include \\\n    SQLITE3_LIBS=\"-L/usr/lusers/jkbest/inst/sqlite-3.33.0/lib -lsqlite3\" \\\n    CPPFLAGS=-I/usr/lusers/jkbest/inst/sqlite-3.33.0/include \\\n    LDFLAGS=\"-L/usr/lusers/jkbest/inst/sqlite-3.33.0/lib -lsqlite3\"\n\nCompile and install:\n\nmake\nmake install\n\nUpdate PATH, LD_LIBRARY_PATH, PKG_CONFIG_PATH, and CPATH as described above."
   },
   {
-    "objectID": "about.html#teaching",
-    "href": "about.html#teaching",
-    "title": "About",
-    "section": "Teaching",
-    "text": "Teaching"
+    "objectID": "posts/down-the-rgdal-rabbit-hole/down-the-rgdal-rabbit-hole.html#gdal",
+    "href": "posts/down-the-rgdal-rabbit-hole/down-the-rgdal-rabbit-hole.html#gdal",
+    "title": "Down the rgdal rabbit hole",
+    "section": "GDAL",
+    "text": "GDAL\n\nDownload and untar the latest version of GDAL.\nConfigure:\n\n./configure --prefix=/usr/lusers/jkbest/inst/gdal-3.2.0\\\n    CFLAGS=\"-I/usr/lusers/jkbest/inst/proj-7.2.0/include -I/usr/lusers/jkbest/inst/sqlite-3.33.0/include\"\\\n    LIBS=\"-L/usr/lusers/jkbest/inst/proj-7.2.0/lib -lproj -L/usr/lusers/jkbest/inst/sqlite-3.33.0/lib -lsqlite3\" \\\n    CPPFLAGS=\"-I/usr/lusers/jkbest/inst/proj-7.2.0/include -I/usr/lusers/jkbest/inst/sqlite-3.33.0/include\"\\\n    LDFLAGS=\"-L/usr/lusers/jkbest/inst/proj-7.2.0/lib -lproj -L/usr/lusers/jkbest/inst/sqlite-3.33.0/lib -lsqlite3\"\n\nCompile and install (takes a while and benefits from multiple jobs):\n\nmake -jN\nmake install\n\nUpdate environmental variables."
   },
   {
-    "objectID": "about.html#publications",
-    "href": "about.html#publications",
-    "title": "About",
-    "section": "Publications",
-    "text": "Publications"
-  },
-  {
-    "objectID": "about.html#presentations",
-    "href": "about.html#presentations",
-    "title": "About",
-    "section": "Presentations",
-    "text": "Presentations\ntitle: “About” image: profile.jpg about: template: jolla links: - icon: twitter text: Twitter href: https://twitter.com/isposdef - icon: github text: Github href: https://github.com/jkbest2 - icon: CV text: CV href: www/cv.pdf\n\nAbout this blog"
-  },
-  {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "Posts",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\nThis is a post with executable code.\n\n\n\n\n\n\nApr 6, 2022\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\nThis is the first post in a Quarto blog. Welcome!\n\n\n\n\n\n\nApr 3, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhyak\n\n\nR\n\n\n\n\nHow to compile the rgdal package and its dependencies.\n\n\n\n\n\n\nNov 3, 2020\n\n\nJohn Best\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nhyak\n\n\n\n\nNOTE: This information was accurate as of early 2020, but is now (April 2022) slightly out of date; e.g. the klone cluster is now available and interactive nodes are no longer a separate partition.\n\n\n\n\n\n\nFeb 24, 2020\n\n\nJohn Best\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQERM 597 Seminar\n\n\n\n\nQERM\n\n\nwebsite\n\n\n\n\nUse Git, GitHub, and blogdown to publish an example website on GitHub Pages\n\n\n\n\n\n\nJan 28, 2020\n\n\nJohn Best\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhyak\n\n\nR\n\n\n\n\nFirst, request a build node, which will have internet access. An hour of time should be enough to install R and a few packages. Building R (especially the suggested packages) can be sped up by using multiple build jobs.\n\n\n\n\n\n\nJan 10, 2020\n\n\nJohn Best\n\n\n\n\n\n\nNo matching items"
+    "objectID": "posts/down-the-rgdal-rabbit-hole/down-the-rgdal-rabbit-hole.html#rgdal",
+    "href": "posts/down-the-rgdal-rabbit-hole/down-the-rgdal-rabbit-hole.html#rgdal",
+    "title": "Down the rgdal rabbit hole",
+    "section": "rgdal",
+    "text": "rgdal\nIn R, run\ninstall.packages(\"rgdal\", configure.args = \"--host=host\")\nNo idea why the host argument is necessary, but it errors with messages about cross-compiling if it is not included."
   },
   {
     "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html",
@@ -215,75 +222,5 @@
     "title": "Introduction to Hyak",
     "section": "Advanced usage",
     "text": "Advanced usage\n\nAdd module imports to your .bashrc file\nAdd other customizations\nSet up sshfs\nCompile your own R with MKL\nWrite your own module for everyone to use"
-  },
-  {
-    "objectID": "posts/down-the-rgdal-rabbit-hole/down-the-rgdal-rabbit-hole.html",
-    "href": "posts/down-the-rgdal-rabbit-hole/down-the-rgdal-rabbit-hole.html",
-    "title": "Down the rgdal rabbit hole",
-    "section": "",
-    "text": "I have a package that depends on INLA, which has recently begun failing to load if rgdal isn’t installed correctly. rgdal can’t be installed without the GDAL library, which requires PROJ, which requires SQLite. I needed to install all of these on our cluster without root access. That meant compiling each one to a non-standard location, then ensuring that the next in the sequence knew where this was. It also meant that if I missed an option in, say SQLite, I had to start from the bottom and recompile everything."
-  },
-  {
-    "objectID": "posts/down-the-rgdal-rabbit-hole/down-the-rgdal-rabbit-hole.html#sqlite",
-    "href": "posts/down-the-rgdal-rabbit-hole/down-the-rgdal-rabbit-hole.html#sqlite",
-    "title": "Down the rgdal rabbit hole",
-    "section": "SQLite",
-    "text": "SQLite\n\nDownload and untar the most recent SQLite amalgamation. I did not use the autoconf version.\nConfigure:\n\n./configure --prefix=/usr/lusers/jkbest/inst/sqlite-3.33.0 \\\n    CFLAGS=\"-DSQLITE_ENABLE_COLUMN_METADATA=1\"\nNote the CFLAGS here. Without that rgdal will fail to install with a message about table_columns or similar and you’ll need to start over from this step (ask me how I know!).\n\nCompile and install:\n\nmake -jN\nmake install\n\nUpdate $PATHs. In your .zshrc, .bashrc or similar, add entries to PATH for bin, LD_LIBRARY_PATH for lib, CPATH for include, and PKG_CONFIG_PATH for lib/pkgconfig. I don’t know which of these mattered, but it didn’t hurt to add them."
-  },
-  {
-    "objectID": "posts/down-the-rgdal-rabbit-hole/down-the-rgdal-rabbit-hole.html#proj",
-    "href": "posts/down-the-rgdal-rabbit-hole/down-the-rgdal-rabbit-hole.html#proj",
-    "title": "Down the rgdal rabbit hole",
-    "section": "PROJ",
-    "text": "PROJ\n\nDownload and untar the latest version of PROJ.\nConfigure:\n\n./configure --prefix=$INSTALL_PATH/proj-7.2.0 \\\n    SQLITE3_CFLAGS=-I/usr/lusers/jkbest/inst/sqlite-3.33.0/include \\\n    SQLITE3_LIBS=\"-L/usr/lusers/jkbest/inst/sqlite-3.33.0/lib -lsqlite3\" \\\n    CPPFLAGS=-I/usr/lusers/jkbest/inst/sqlite-3.33.0/include \\\n    LDFLAGS=\"-L/usr/lusers/jkbest/inst/sqlite-3.33.0/lib -lsqlite3\"\n\nCompile and install:\n\nmake\nmake install\n\nUpdate PATH, LD_LIBRARY_PATH, PKG_CONFIG_PATH, and CPATH as described above."
-  },
-  {
-    "objectID": "posts/down-the-rgdal-rabbit-hole/down-the-rgdal-rabbit-hole.html#gdal",
-    "href": "posts/down-the-rgdal-rabbit-hole/down-the-rgdal-rabbit-hole.html#gdal",
-    "title": "Down the rgdal rabbit hole",
-    "section": "GDAL",
-    "text": "GDAL\n\nDownload and untar the latest version of GDAL.\nConfigure:\n\n./configure --prefix=/usr/lusers/jkbest/inst/gdal-3.2.0\\\n    CFLAGS=\"-I/usr/lusers/jkbest/inst/proj-7.2.0/include -I/usr/lusers/jkbest/inst/sqlite-3.33.0/include\"\\\n    LIBS=\"-L/usr/lusers/jkbest/inst/proj-7.2.0/lib -lproj -L/usr/lusers/jkbest/inst/sqlite-3.33.0/lib -lsqlite3\" \\\n    CPPFLAGS=\"-I/usr/lusers/jkbest/inst/proj-7.2.0/include -I/usr/lusers/jkbest/inst/sqlite-3.33.0/include\"\\\n    LDFLAGS=\"-L/usr/lusers/jkbest/inst/proj-7.2.0/lib -lproj -L/usr/lusers/jkbest/inst/sqlite-3.33.0/lib -lsqlite3\"\n\nCompile and install (takes a while and benefits from multiple jobs):\n\nmake -jN\nmake install\n\nUpdate environmental variables."
-  },
-  {
-    "objectID": "posts/down-the-rgdal-rabbit-hole/down-the-rgdal-rabbit-hole.html#rgdal",
-    "href": "posts/down-the-rgdal-rabbit-hole/down-the-rgdal-rabbit-hole.html#rgdal",
-    "title": "Down the rgdal rabbit hole",
-    "section": "rgdal",
-    "text": "rgdal\nIn R, run\ninstall.packages(\"rgdal\", configure.args = \"--host=host\")\nNo idea why the host argument is necessary, but it errors with messages about cross-compiling if it is not included."
-  },
-  {
-    "objectID": "posts/qerm-website-prep/qerm-website-prep.html",
-    "href": "posts/qerm-website-prep/qerm-website-prep.html",
-    "title": "Set up a website for GitHub Pages",
-    "section": "",
-    "text": "We would like everyone to run a few steps before class on Wednesday so that we can concentrate on the interesting parts such as customization and personalization. We will be following the steps outlined in the presentations from the Summer of blogdown slides by Alison Hill of RStudio. We will deviate from these by using GitHub pages for hosting rather than Netlify. We’ll be happy to explain the advantages and disadvantages of each in class if anyone is interested. The blogdown package uses the static site generator Hugo (we will explain what this means in class)"
-  },
-  {
-    "objectID": "posts/qerm-website-prep/qerm-website-prep.html#prerequisites",
-    "href": "posts/qerm-website-prep/qerm-website-prep.html#prerequisites",
-    "title": "Set up a website for GitHub Pages",
-    "section": "Prerequisites",
-    "text": "Prerequisites\nBecause we are hosting on GitHub Pages, we need to create two separate repositories. We will following the instructions from Hugo. First we will create a repository to contain the files that we edit to change the website. On GitHub, create an empty (no README or .gitignore) repository named website.\nThe second repository will hold the rendered version of the site. The name of this repository does matter; it must be USER.github.io (where USER is your GitHub username). This should also be an empty repository.\nCreate a directory named website and initialize a Git repository.\nmkdir website\ncd website\ngit init\nThen tell Git how to find the corresponding GitHub repository.\ngit remote add origin https://github.com/USER/website.git\nNow open R with website as your working directory (you can check this with getwd).\nWe will be using the blogdown package to simplify the creation of our website. So the first step is to install blogdown if it is not already installed. As usual, this can be done with\n\ninstall.packages(\"blogdown\")\n\nEvery time we want to use blogdown after this, we can use\n\nlibrary(blogdown)\n\nOnce blogdown is installed, we need to install Hugo, our static site generator. blogdown makes this easy; just run (in R)\n\ninstall_hugo()\n\nThe blogdown package also includes update_hugo and hugo_version functions."
-  },
-  {
-    "objectID": "posts/qerm-website-prep/qerm-website-prep.html#create-the-website",
-    "href": "posts/qerm-website-prep/qerm-website-prep.html#create-the-website",
-    "title": "Set up a website for GitHub Pages",
-    "section": "Create the website",
-    "text": "Create the website\nNow we can create the website. I will use the Academic theme, which I use for my personal website. There are many, many others to choose from.\nAgain, blogdown provides a convenient way to start a new site.\n\nnew_site(theme = \"gcushen/hugo-academic\",\n         sample = TRUE,\n         theme_example = TRUE,\n         empty_dirs = TRUE,\n         to_yaml = TRUE)\n\nThis should open your browser to the example site.\n\n\n\nIf it doesn’t open automatically, you can go to https://localhost:4321. In the future, any time you’re in the working directory for your website, you can use the blogdown::serve_site function to do the same thing. This will live-reload any time you make changes."
-  },
-  {
-    "objectID": "posts/qerm-website-prep/qerm-website-prep.html#set-up-the-git-structure",
-    "href": "posts/qerm-website-prep/qerm-website-prep.html#set-up-the-git-structure",
-    "title": "Set up a website for GitHub Pages",
-    "section": "Set up the Git structure",
-    "text": "Set up the Git structure\nThe rest of these instructions are in the terminal (i.e., not in R) and assume that you are starting from the website directory.\nThe public subdirectory of website contains the HTML of our rendered website. This needs to be uploaded to your USER.github.io GitHub repository. At the terminal, starting from the website directory, we want to:\n\nchange to the public subdirectory;\ninitialize a Git repository;\nadd the GitHub remote;\nstage all the files;\ncommit them;\nand push them to GitHub.\n\nThis can be accomplished by running\ncd public\ngit init\ngit remote add origin https://github.com/USER/USER.github.io.git\ngit add .\ngit commit -m \"Intialize with rendered example site\"\ngit push -u origin master\nWe also want to track the rest of the files in website, because these are the ones we edit by hand to change the content of the website. To do this, we\n\nchange back to the website directory;\nadd the public directory as a submodule (a Git repository within a Git repository);\nstage everything;\ncommit everything;\nand push it up to GitHub.\n\ncd ..\ngit submodule add -b master https://github.com/USER/USER.github.io.git public\ngit add .\ngit commit -m \"Initialize with Academic example site\"\ngit push -u origin master\nYou should now see files in the repositories you pushed to on GitHub. If you pushed to the USER.github.io directory, you should also see the example site at https://USER.github.io. We will personalize these sites in class on Wednesday."
-  },
-  {
-    "objectID": "posts/compiling-r-with-mkl-on-hyak/compiling-r-with-intel-compilers-and-mkl-on-hyak.html",
-    "href": "posts/compiling-r-with-mkl-on-hyak/compiling-r-with-intel-compilers-and-mkl-on-hyak.html",
-    "title": "Compiling R with Intel compilers and MKL on Hyak",
-    "section": "",
-    "text": "Build and install R\nThis part is pretty easy once configuration is complete. The -j flag can be used to specify the maximum number of parallel jobs to run. This should be equal to the --cpus-per-task specified when you requested the build node.\nmake -j8\nInstallation can be accomplised using\nmake install\nFinally, add the R and Rscript executables to your PATH.\n\n\nTesting the installation\nIn order to use multiple cores on a compute node, the --cpus-per-task flag must be greater than one. Note that --tasks-per-node does not allow multiple threads to be used by a single process. Watching CPU usage with e.g. htop will tell you if multithreaded linear algebra is working. So, using an interactive compute node (such as stf-int) open your newly-compiled version of R and running\nX <- matrix(rnorm(5000 * 5000), nrow = 5000)\nt(X) %*% X\nYou should see multiple CPUs being used at 100% in htop. If only one CPU is maxed out, something went wrong."
   }
 ]
