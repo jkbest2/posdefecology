@@ -11,7 +11,10 @@
     "items": [
       "/posts/post-with-code/index.html",
       "/posts/welcome/index.html",
-      "/posts/puntlab-hyak-intro/puntlab_hyak_intro.html"
+      "/posts/down-the-rgdal-rabbit-hole/down-the-rgdal-rabbit-hole.html",
+      "/posts/puntlab-hyak-intro/puntlab_hyak_intro.html",
+      "/posts/qerm-website-prep/qerm-website-prep.html",
+      "/posts/compiling-r-with-mkl-on-hyak/compiling-r-with-intel-compilers-and-mkl-on-hyak.html"
     ]
   }
 ]
