@@ -1,6 +1,6 @@
 ---
 title: "John K. Best"
-image: profile.jpg
+image: static/profile.jpg
 about:
     template: trestles
     links:
