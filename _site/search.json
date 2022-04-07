@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I am a sixth year PhD candidate in the Quantitative Ecology and Resource Management program at the University of Washington. My research focuses on applying spatiotemporal statistical models to questions in fisheries management and ecology. In particular, I am developing models for indices of abundance that include fishery-dependent observations. I am also interested in improving the computational efficiency and reliability of Bayesian model fits through the application of advanced Markov chain Monte Carlo tools like the No-U-Turn Sampler. Prior to graduate school I worked in aviation maintenance and the outdoor industry."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "John K. Best",
+    "section": "",
+    "text": "When I’m not working I spend time with my family, play with my dog, run, and learn about whatever new and exciting hobby I’ve more recently found."
+  },
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "Positive Definite Ecology",
+    "section": "",
+    "text": "Publications\n\n\n\n/tmp/RtmpEmRn4e/file2c986142bdc62.yaml\n\n\n\n\n\nFunding\n\n\n# A tibble: 1 × 5\n  what                           when    with                       where why   \n  <chr>                          <chr>   <chr>                      <chr> <list>\n1 Improving spatiotemporal indi… 2019 -… NMFS-Sea Grant Joint Fell… $120… <chr …\n\n\n\n\nService\n\nServed as peer reviewer for Fisheries Research, ICES Journal of Marine Sciences, Progress in Oceanography, and Aquatic Ecology\nCo-organizer of the 2022 University of Washington College of the Environment Research Derby\nCo-organizer of the University of Washington Department of Statistics Spatiotemporal Reading Group\n\n\n\nTalks\n\n\n# A tibble: 11 × 5\n   what                         when       with                where      why   \n   <chr>                        <chr>      <chr>               <chr>      <list>\n 1 Fishery-dependent data in a… March 28,… CAPAM Spatio-tempo… La Jolla,… <chr …\n 2 Standardizing spatially exp… July 5, 2… International Stat… St. Andre… <chr …\n 3 Nonstationarity in spatiote… July 30, … Joint Statistical … Vancouver… <chr …\n 4 Reparameterizing Bayesian s… November … Think Tank          Seattle, … <chr …\n 5 Combining Fishery-independe… October 2… Think Tank          Seattle, … <chr …\n 6 Parameterizations for Bayes… November … SAFS Graduate Stud… Seattle, … <chr …\n 7 Catchability as a spatiotem… November … SAFS Graduate Stud… Seattle, … <chr …\n 8 An index of abundance combi… July 16, … Statistics 2021 Ca… Montreal,… <chr …\n 9 An index of abundance combi… September… World Fisheries Co… Adelaide,… <chr …\n10 Spatially varying catchabil… November … SAFS Graduate Stud… Seattle, … <chr …\n11 Spatially varying catchabil… December … 2022 Sea Grant-NMF… (v)        <chr …"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About",
+    "section": "Education",
+    "text": "Education\nUniversity of Washington | Seattle, WA PhD in Quantitative Ecology & Resource Management | August 2016 -\nUniversity of Alaska Fairbanks | Fairbanks, AK MS in Statistics | September 2014 - May 2016\nClarkson University | Potsdam, NY BS in Biology & Physics | September 2004 - May 2008"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "About",
+    "section": "Experience",
+    "text": "Experience"
+  },
+  {
+    "objectID": "about.html#teaching",
+    "href": "about.html#teaching",
+    "title": "About",
+    "section": "Teaching",
+    "text": "Teaching"
+  },
+  {
+    "objectID": "about.html#publications",
+    "href": "about.html#publications",
+    "title": "About",
+    "section": "Publications",
+    "text": "Publications"
+  },
+  {
+    "objectID": "about.html#presentations",
+    "href": "about.html#presentations",
+    "title": "About",
+    "section": "Presentations",
+    "text": "Presentations\ntitle: “About” image: profile.jpg about: template: jolla links: - icon: twitter text: Twitter href: https://twitter.com/isposdef - icon: github text: Github href: https://github.com/jkbest2 - icon: CV text: CV href: www/cv.pdf\n\nAbout this blog"
+  }
+]

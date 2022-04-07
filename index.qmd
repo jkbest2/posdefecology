@@ -1,0 +1,32 @@
+---
+title: "John K. Best"
+image: profile.jpg
+about:
+    template: trestles
+    links:
+        - icon: twitter
+          text: Twitter
+          href: https://twitter.com/isposdef
+        - icon: github
+          text: Github
+          href: https://github.com/jkbest2
+        - icon: orcid
+          text: ORCiD
+          href: https://orcid.org/my-orcid?orcid=0000-0002-8920-0900
+        - icon: CV
+          text: CV
+          href: static/cv.pdf
+---
+
+I am a sixth year PhD candidate in the Quantitative Ecology and Resource
+Management program at the University of Washington. My research focuses on
+applying spatiotemporal statistical models to questions in fisheries management
+and ecology. In particular, I am developing models for indices of abundance that
+include fishery-dependent observations. I am also interested in improving the
+computational efficiency and reliability of Bayesian model fits through the
+application of advanced Markov chain Monte Carlo tools like the No-U-Turn
+Sampler. Prior to graduate school I worked in aviation maintenance and the
+outdoor industry.
+
+When I'm not working I spend time with my family, play with my dog, run, and
+learn about whatever new and exciting hobby I've more recently found.
