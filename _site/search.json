@@ -68,5 +68,152 @@
     "title": "About",
     "section": "Presentations",
     "text": "Presentations\ntitle: “About” image: profile.jpg about: template: jolla links: - icon: twitter text: Twitter href: https://twitter.com/isposdef - icon: github text: Github href: https://github.com/jkbest2 - icon: CV text: CV href: www/cv.pdf\n\nAbout this blog"
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Posts",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\nThis is a post with executable code.\n\n\n\n\n\n\nApr 6, 2022\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\nThis is the first post in a Quarto blog. Welcome!\n\n\n\n\n\n\nApr 3, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nhyak\n\n\n\n\nNOTE: This information was accurate as of early 2020, but is now (April 2022) slightly out of date; e.g. the klone cluster is now available and interactive nodes are no longer a separate partition.\n\n\n\n\n\n\nFeb 24, 2020\n\n\nJohn Best\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html",
+    "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html",
+    "title": "Introduction to Hyak",
+    "section": "",
+    "text": "NOTE: This information was accurate as of early 2020, but is now (April 2022) slightly out of date; e.g. the klone cluster is now available and interactive nodes are no longer a separate partition."
+  },
+  {
+    "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#use-hyak-when-you-need-additional-resources",
+    "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#use-hyak-when-you-need-additional-resources",
+    "title": "Introduction to Hyak",
+    "section": "Use Hyak when you need additional resources",
+    "text": "Use Hyak when you need additional resources\n\nMore processing power\nModels or data don’t fit in RAM"
+  },
+  {
+    "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#think-carefully-about-how-to-use-hyak",
+    "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#think-carefully-about-how-to-use-hyak",
+    "title": "Introduction to Hyak",
+    "section": "Think carefully about how to use Hyak",
+    "text": "Think carefully about how to use Hyak\n\nDo you really need to use it?\nHow can you use it efficiently?"
+  },
+  {
+    "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#parallelization",
+    "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#parallelization",
+    "title": "Introduction to Hyak",
+    "section": "Parallelization",
+    "text": "Parallelization\n\nWhich steps are independent?\nWhich steps are bottlenecks?\nHow to minimize overhead?"
+  },
+  {
+    "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#example-simulation-study",
+    "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#example-simulation-study",
+    "title": "Introduction to Hyak",
+    "section": "Example: Simulation study",
+    "text": "Example: Simulation study\n\n\n\nSimulation study flow chart"
+  },
+  {
+    "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#parallelization-strategies",
+    "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#parallelization-strategies",
+    "title": "Introduction to Hyak",
+    "section": "Parallelization strategies",
+    "text": "Parallelization strategies\n\nWhat step takes most time?\nWhich step is performed most often?\nAre there natural save points?\nWhich computations can be reused?\nAre there other limitations?"
+  },
+  {
+    "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#checkpointing",
+    "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#checkpointing",
+    "title": "Introduction to Hyak",
+    "section": "Checkpointing",
+    "text": "Checkpointing\n\nSave progress\nRestart from saved position\nUse the ckpt queue"
+  },
+  {
+    "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#what-is-hyak",
+    "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#what-is-hyak",
+    "title": "Introduction to Hyak",
+    "section": "What is Hyak?",
+    "text": "What is Hyak?\n\nMox\nIKT"
+  },
+  {
+    "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#logging-in",
+    "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#logging-in",
+    "title": "Introduction to Hyak",
+    "section": "Logging in",
+    "text": "Logging in\nssh jkbest@mox.hyak.uw.edu\nKeep your phone handy for 2FA!"
+  },
+  {
+    "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#how-to-choose-a-node-type",
+    "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#how-to-choose-a-node-type",
+    "title": "Introduction to Hyak",
+    "section": "How to choose a node type",
+    "text": "How to choose a node type\n\n\n\nChoosing a node type\n\n\n{{< figure src=“nodechoice.png” >}}"
+  },
+  {
+    "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#request-an-interactive-node",
+    "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#request-an-interactive-node",
+    "title": "Introduction to Hyak",
+    "section": "Request an interactive node",
+    "text": "Request an interactive node\n\nbuild node:\n\n\nsrun -p build --mem=10G --time=1:00:00 --pty /bin/bash\n\nstf-int node:\n\n\nsrun -p stf-int -A stf --cpus-per-task=28 --mem=120G\\\n    --time=1:00:00 --pty /bin/bash"
+  },
+  {
+    "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#relevant-slurm-arguments",
+    "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#relevant-slurm-arguments",
+    "title": "Introduction to Hyak",
+    "section": "Relevant SLURM arguments",
+    "text": "Relevant SLURM arguments\n\nsrun\n\nRequest in interactive node\n\nsbatch\n\nSubmit a batch job\n\n-p\n\nPartition; node type to use\n\n-A\n\nAccount; usually stf\n\n--cpus-per-task\n\nThreads per program\n\n--tasks-per-node\n\nProcesses to run on each node\n\n--nodes\n\nNumber of nodes to request\n\n--mem\n\nAmount of RAM to request\n\n--time\n\nTime to reserve\n\n--pty\n\nProgram to start"
+  },
+  {
+    "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#connecting-a-second-time",
+    "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#connecting-a-second-time",
+    "title": "Introduction to Hyak",
+    "section": "Connecting a second time",
+    "text": "Connecting a second time\nTo see which node you are using:\nsqueue -u jkbest\n  JOBID PARTITION ... NODELIST(REASON)\n1838469     build ... n2232\nFrom login node:\nssh n2232\nNow monitor usage with e.g. htop"
+  },
+  {
+    "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#modules",
+    "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#modules",
+    "title": "Introduction to Hyak",
+    "section": "Modules",
+    "text": "Modules\nKey commands:\n\nmodule --help\n\nReminders\n\nmodule avail\n\nList available modules\n\nmodule apropos srchstr\n\nSearch modules for srchstr\n\nmodule load abcdef\n\nAttach module abcdef\n\nmodule unload abcdef\n\nDetach module abcdef"
+  },
+  {
+    "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#using-a-build-node",
+    "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#using-a-build-node",
+    "title": "Introduction to Hyak",
+    "section": "Using a build node",
+    "text": "Using a build node\n\nRequest a build node.\nLoad the appropriate R module (or have your custom version accessible).\nRun R at the command line to open R.\nUse install.packages to install what you need."
+  },
+  {
+    "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#using-an-stf-int-node",
+    "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#using-an-stf-int-node",
+    "title": "Introduction to Hyak",
+    "section": "Using an stf-int node",
+    "text": "Using an stf-int node\n\nRequest an stf-int node (see above).\nLoad the R module.\nOpen R and run:\n\nlibrary(TMB)\n\nrunExample(\"simple\")"
+  },
+  {
+    "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#submit-a-batch-job-to-stf",
+    "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#submit-a-batch-job-to-stf",
+    "title": "Introduction to Hyak",
+    "section": "Submit a batch job to stf",
+    "text": "Submit a batch job to stf\nThe “driver script” runs your analysis, including loading packages, reading data, and sourceing other files with functions etc. The SLURM script specifies the resources you need and how to run your driver script. Examples of scripts that I have used:\n\nDriver script\nSLURM script\n\nNote that these are just example scripts, I haven’t made them self-contained so they won’t run for you. That said, the fitsims.slurm file should be a good starting point for your own SLURM scripts. In the directory with the SLURM script, you can submit the job:\nsbatch fitsims.slurm\nTips:\n\nWrite a single “driver” script\nUse Rscript to run the driver script"
+  },
+  {
+    "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#there-are-three-places-to-store-files",
+    "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#there-are-three-places-to-store-files",
+    "title": "Introduction to Hyak",
+    "section": "There are three places to store files",
+    "text": "There are three places to store files\n\nHome\n\n\\home\\xyz\nPersistent, but low performance\nConfiguration files\n\n\n\nGScratch\n\n\\gscratch\\stf\\xyz\nCreate your own directory.\n30-day limit\nScratch directory for computations\n\n\n\nLolo\n\nLong-term tape storage\nMust bundle files together"
+  },
+  {
+    "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#how-to-transfer-files",
+    "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#how-to-transfer-files",
+    "title": "Introduction to Hyak",
+    "section": "How to transfer files",
+    "text": "How to transfer files\n\nsftp\n\nConnect to mox.hyak.uw.edu\n\nsshfs\n\nAttach to local file system\n\ngit\n\nCode managed in e.g. a GitHub repo"
+  },
+  {
+    "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#advanced-usage",
+    "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#advanced-usage",
+    "title": "Introduction to Hyak",
+    "section": "Advanced usage",
+    "text": "Advanced usage\n\nAdd module imports to your .bashrc file\nAdd other customizations\nSet up sshfs\nCompile your own R with MKL\nWrite your own module for everyone to use"
   }
 ]

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="quarto-0.9.194">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="John Best">
+  <meta name="dcterms.date" content="2020-02-24">
+  <title>Positive Definite Ecology - Introduction to Hyak</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+
+  <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+  <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+  <script src="../../site_libs/clipboard/clipboard.min.js"></script>
+  <meta name="quarto:offset" content="../../">
+  <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+  <script src="../../site_libs/quarto-search/fuse.min.js"></script>
+  <script src="../../site_libs/quarto-search/quarto-search.js"></script>
+  <script src="../../site_libs/quarto-html/quarto.js"></script>
+  <script src="../../site_libs/quarto-html/popper.min.js"></script>
+  <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="../../site_libs/quarto-html/anchor.min.js"></script>
+  <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <link id="quarto-text-highlighting-styles" href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet">
+  <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+  <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script id="quarto-search-options" type="application/json">{
+    "location": "navbar",
+    "copy-button": false,
+    "collapse-after": 3,
+    "panel-placement": "end",
+    "type": "overlay",
+    "limit": 20,
+    "language": {
+      "search-no-results-text": "No results",
+      "search-matching-documents-text": "matching documents",
+      "search-copy-link-title": "Copy link to search",
+      "search-hide-matches-text": "Hide additional matches",
+      "search-more-match-text": "more match in this document",
+      "search-more-matches-text": "more matches in this document",
+      "search-clear-button-title": "Clear",
+      "search-detached-cancel-button-title": "Cancel",
+      "search-submit-button-title": "Submit"
+    }
+  }</script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="fullcontent">
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Positive Definite Ecology</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html">Posts</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jkbest2"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/isposdef"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full" data-sidebar-align="true">
+
+
+
+<div class="quarto-title-banner color-navbar page-columns page-full"><div class="quarto-title column-body"><h1 class="title display-7">Introduction to Hyak</h1><div class="quarto-categories"><div class="quarto-category">hyak</div></div></div></div><div class="quarto-title-meta"><div><div class="quarto-title-meta-heading">Author</div><div class="quarto-title-meta-contents"><div class="quarto-title-authors"><div><div>
+<p>John Best</p>
+</div></div></div></div></div><div><div class="quarto-title-meta-heading">Published</div><div class="quarto-title-meta-contents"><p class="date">February 24, 2020</p></div></div></div></header>
+<p><strong>NOTE</strong>: This information was accurate as of early 2020, but is now (April 2022) slightly out of date; e.g.&nbsp;the <code>klone</code> cluster is now available and interactive nodes are no longer a separate partition.</p>
+<section id="use-hyak-when-you-need-additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="use-hyak-when-you-need-additional-resources">Use Hyak when you need additional resources</h2>
+<ul>
+<li>More processing power</li>
+<li>Models or data don’t fit in RAM</li>
+</ul>
+</section>
+<section id="think-carefully-about-how-to-use-hyak" class="level2">
+<h2 class="anchored" data-anchor-id="think-carefully-about-how-to-use-hyak">Think carefully about how to use Hyak</h2>
+<ul>
+<li>Do you really need to use it?</li>
+<li>How can you use it efficiently?</li>
+</ul>
+</section>
+<section id="parallelization" class="level2">
+<h2 class="anchored" data-anchor-id="parallelization">Parallelization</h2>
+<ul>
+<li>Which steps are independent?</li>
+<li>Which steps are bottlenecks?</li>
+<li>How to minimize overhead?</li>
+</ul>
+</section>
+<section id="example-simulation-study" class="level2">
+<h2 class="anchored" data-anchor-id="example-simulation-study">Example: Simulation study</h2>
+<ol type="1">
+<li>Specify operating and estimation models</li>
+<li>Simulate 100 operating models</li>
+<li>Fit 300 estimation models</li>
+<li>Calculate metrics</li>
+<li>Summarize results</li>
+</ol>
+</section>
+<section id="example-simulation-study" class="level2">
+<h2 class="anchored" data-anchor-id="example-simulation-study">Example: Simulation study</h2>
+<ol type="1">
+<li>Specify operating and estimation models</li>
+<li>Simulate 100 operating models</li>
+<li>Fit 300 estimation models</li>
+<li>Calculate metrics</li>
+<li>Summarize results</li>
+</ol>
+<p>Which steps are independent? Which step is the bottleneck? Are there steps that could be done together?</p>
+</section>
+<section id="example-simulation-study" class="level2">
+<h2 class="anchored" data-anchor-id="example-simulation-study">Example: Simulation study</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="simstudy.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Simulation study flow chart</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="parallelization-strategies" class="level2">
+<h2 class="anchored" data-anchor-id="parallelization-strategies">Parallelization strategies</h2>
+<ul>
+<li>What step takes most time?</li>
+<li>Which step is performed most often?</li>
+<li>Are there natural save points?</li>
+<li>Which computations can be reused?</li>
+<li>Are there other limitations?</li>
+</ul>
+</section>
+<section id="checkpointing" class="level2">
+<h2 class="anchored" data-anchor-id="checkpointing">Checkpointing</h2>
+<ul>
+<li>Save progress</li>
+<li>Restart from saved position</li>
+<li>Use the <code>ckpt</code> queue</li>
+</ul>
+</section>
+<section id="what-is-hyak" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-hyak">What is Hyak?</h2>
+<ul>
+<li>Mox</li>
+<li><del>IKT</del></li>
+</ul>
+</section>
+<section id="logging-in" class="level2">
+<h2 class="anchored" data-anchor-id="logging-in">Logging in</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> jkbest@mox.hyak.uw.edu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Keep your phone handy for 2FA!</p>
+</section>
+<section id="how-to-choose-a-node-type" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-choose-a-node-type">How to choose a node type</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="nodechoice.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Choosing a node type</figcaption><p></p>
+</figure>
+</div>
+<p>{{&lt; figure src=“nodechoice.png” &gt;}}</p>
+</section>
+<section id="request-an-interactive-node" class="level2">
+<h2 class="anchored" data-anchor-id="request-an-interactive-node">Request an interactive node</h2>
+<ul>
+<li><code>build</code> node:</li>
+</ul>
+<!--listend-->
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">-p</span> build <span class="at">--mem</span><span class="op">=</span>10G <span class="at">--time</span><span class="op">=</span>1:00:00 <span class="at">--pty</span> /bin/bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>stf-int</code> node:</li>
+</ul>
+<!--listend-->
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">-p</span> stf-int <span class="at">-A</span> stf <span class="at">--cpus-per-task</span><span class="op">=</span>28 <span class="at">--mem</span><span class="op">=</span>120G<span class="dt">\</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">--time</span><span class="op">=</span>1:00:00 <span class="at">--pty</span> /bin/bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="relevant-slurm-arguments" class="level2">
+<h2 class="anchored" data-anchor-id="relevant-slurm-arguments">Relevant SLURM arguments</h2>
+<dl>
+<dt><code>srun</code></dt>
+<dd>
+Request in interactive node
+</dd>
+<dt><code>sbatch</code></dt>
+<dd>
+Submit a batch job
+</dd>
+<dt><code>-p</code></dt>
+<dd>
+Partition; node type to use
+</dd>
+<dt><code>-A</code></dt>
+<dd>
+Account; usually <code>stf</code>
+</dd>
+<dt><code>--cpus-per-task</code></dt>
+<dd>
+Threads per program
+</dd>
+<dt><code>--tasks-per-node</code></dt>
+<dd>
+Processes to run on each node
+</dd>
+<dt><code>--nodes</code></dt>
+<dd>
+Number of nodes to request
+</dd>
+<dt><code>--mem</code></dt>
+<dd>
+Amount of RAM to request
+</dd>
+<dt><code>--time</code></dt>
+<dd>
+Time to reserve
+</dd>
+<dt><code>--pty</code></dt>
+<dd>
+Program to start
+</dd>
+</dl>
+</section>
+<section id="connecting-a-second-time" class="level2">
+<h2 class="anchored" data-anchor-id="connecting-a-second-time">Connecting a second time</h2>
+<p>To see which node you are using:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">squeue</span> <span class="at">-u</span> jkbest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>  JOBID PARTITION ... NODELIST(REASON)
+1838469     build ... n2232</code></pre>
+<p>From login node:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> n2232</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now monitor usage with e.g.&nbsp;<code>htop</code></p>
+</section>
+<section id="modules" class="level2">
+<h2 class="anchored" data-anchor-id="modules">Modules</h2>
+<p>Key commands:</p>
+<dl>
+<dt><code>module --help</code></dt>
+<dd>
+Reminders
+</dd>
+<dt><code>module avail</code></dt>
+<dd>
+List available modules
+</dd>
+<dt><code>module apropos srchstr</code></dt>
+<dd>
+Search modules for <code>srchstr</code>
+</dd>
+<dt><code>module load abcdef</code></dt>
+<dd>
+Attach module <code>abcdef</code>
+</dd>
+<dt><code>module unload abcdef</code></dt>
+<dd>
+Detach module <code>abcdef</code>
+</dd>
+</dl>
+</section>
+<section id="using-a-build-node" class="level2">
+<h2 class="anchored" data-anchor-id="using-a-build-node">Using a <code>build</code> node</h2>
+<ol type="1">
+<li>Request a <code>build</code> node.</li>
+<li>Load the appropriate R module (or have your custom version accessible).</li>
+<li>Run <code>R</code> at the command line to open R.</li>
+<li>Use <code>install.packages</code> to install what you need.</li>
+</ol>
+</section>
+<section id="using-an-stf-int-node" class="level2">
+<h2 class="anchored" data-anchor-id="using-an-stf-int-node">Using an <code>stf-int</code> node</h2>
+<ol type="1">
+<li>Request an <code>stf-int</code> node (see above).</li>
+<li>Load the R module.</li>
+<li>Open R and run:</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TMB)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">runExample</span>(<span class="st">"simple"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="submit-a-batch-job-to-stf" class="level2">
+<h2 class="anchored" data-anchor-id="submit-a-batch-job-to-stf">Submit a batch job to <code>stf</code></h2>
+<p>The “driver script” runs your analysis, including loading packages, reading data, and <code>source</code>ing other files with functions etc. The SLURM script specifies the resources you need and how to run your driver script. Examples of scripts that I have used:</p>
+<ul>
+<li><a href="../../ox-hugo/fitsims.R">Driver script</a></li>
+<li><a href="../../ox-hugo/fitsims.slurm">SLURM script</a></li>
+</ul>
+<p>Note that these are just example scripts, I haven’t made them self-contained so they won’t run for you. That said, the <code>fitsims.slurm</code> file should be a good starting point for your own SLURM scripts. In the directory with the SLURM script, you can submit the job:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> fitsims.slurm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Tips:</p>
+<ul>
+<li>Write a single “driver” script</li>
+<li>Use <code>Rscript</code> to run the driver script</li>
+</ul>
+</section>
+<section id="there-are-three-places-to-store-files" class="level2">
+<h2 class="anchored" data-anchor-id="there-are-three-places-to-store-files">There are three places to store files</h2>
+<section id="home" class="level3">
+<h3 class="anchored" data-anchor-id="home">Home</h3>
+<ul>
+<li><code>\home\xyz</code></li>
+<li>Persistent, but low performance</li>
+<li>Configuration files</li>
+</ul>
+</section>
+<section id="gscratch" class="level3">
+<h3 class="anchored" data-anchor-id="gscratch">GScratch</h3>
+<ul>
+<li><code>\gscratch\stf\xyz</code></li>
+<li>Create your own directory.</li>
+<li>30-day limit</li>
+<li>Scratch directory for computations</li>
+</ul>
+</section>
+<section id="lolo" class="level3">
+<h3 class="anchored" data-anchor-id="lolo">Lolo</h3>
+<ul>
+<li>Long-term tape storage</li>
+<li>Must bundle files together</li>
+</ul>
+</section>
+</section>
+<section id="how-to-transfer-files" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-transfer-files">How to transfer files</h2>
+<dl>
+<dt><code>sftp</code></dt>
+<dd>
+Connect to <code>mox.hyak.uw.edu</code>
+</dd>
+<dt><code>sshfs</code></dt>
+<dd>
+Attach to local file system
+</dd>
+<dt><code>git</code></dt>
+<dd>
+Code managed in e.g.&nbsp;a GitHub repo
+</dd>
+</dl>
+</section>
+<section id="advanced-usage" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-usage">Advanced usage</h2>
+<ul>
+<li>Add module imports to your <code>.bashrc</code> file</li>
+<li>Add other customizations</li>
+<li>Set up <code>sshfs</code></li>
+<li><a href="https://www.posdefecology.net/post/compiling-r/">Compile your own R with MKL</a></li>
+<li>Write your own module for everyone to use</li>
+</ul>
+
+
+
+</section>
+</main> <!-- /main -->
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    setTimeout(function() {
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+</body></html>
