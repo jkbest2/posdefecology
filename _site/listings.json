@@ -2,6 +2,7 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/moving-to-quarto/moving-to-quarto.html",
       "/posts/down-the-rgdal-rabbit-hole/down-the-rgdal-rabbit-hole.html",
       "/posts/puntlab-hyak-intro/puntlab_hyak_intro.html",
       "/posts/qerm-website-prep/qerm-website-prep.html",

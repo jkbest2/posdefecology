@@ -196,20 +196,10 @@
 <li>Calculate metrics</li>
 <li>Summarize results</li>
 </ol>
-</section>
-<section id="example-simulation-study" class="level2">
-<h2 class="anchored" data-anchor-id="example-simulation-study">Example: Simulation study</h2>
-<ol type="1">
-<li>Specify operating and estimation models</li>
-<li>Simulate 100 operating models</li>
-<li>Fit 300 estimation models</li>
-<li>Calculate metrics</li>
-<li>Summarize results</li>
-</ol>
 <p>Which steps are independent? Which step is the bottleneck? Are there steps that could be done together?</p>
 </section>
-<section id="example-simulation-study" class="level2">
-<h2 class="anchored" data-anchor-id="example-simulation-study">Example: Simulation study</h2>
+<section id="example-simulation-study-fig" class="level2">
+<h2 class="anchored" data-anchor-id="example-simulation-study-fig">Example: Simulation study</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="simstudy.png" class="img-fluid figure-img"></p>
@@ -255,19 +245,16 @@
 <p></p><figcaption aria-hidden="true" class="figure-caption">Choosing a node type</figcaption><p></p>
 </figure>
 </div>
-<p>{{&lt; figure src=“nodechoice.png” &gt;}}</p>
 </section>
 <section id="request-an-interactive-node" class="level2">
 <h2 class="anchored" data-anchor-id="request-an-interactive-node">Request an interactive node</h2>
 <ul>
 <li><code>build</code> node:</li>
 </ul>
-<!--listend-->
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">-p</span> build <span class="at">--mem</span><span class="op">=</span>10G <span class="at">--time</span><span class="op">=</span>1:00:00 <span class="at">--pty</span> /bin/bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><code>stf-int</code> node:</li>
 </ul>
-<!--listend-->
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">-p</span> stf-int <span class="at">-A</span> stf <span class="at">--cpus-per-task</span><span class="op">=</span>28 <span class="at">--mem</span><span class="op">=</span>120G<span class="dt">\</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">--time</span><span class="op">=</span>1:00:00 <span class="at">--pty</span> /bin/bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
@@ -376,8 +363,8 @@ Detach module <code>abcdef</code>
 <h2 class="anchored" data-anchor-id="submit-a-batch-job-to-stf">Submit a batch job to <code>stf</code></h2>
 <p>The “driver script” runs your analysis, including loading packages, reading data, and <code>source</code>ing other files with functions etc. The SLURM script specifies the resources you need and how to run your driver script. Examples of scripts that I have used:</p>
 <ul>
-<li><a href="../../ox-hugo/fitsims.R">Driver script</a></li>
-<li><a href="../../ox-hugo/fitsims.slurm">SLURM script</a></li>
+<li><a href="www/fitsims.R">Driver script</a></li>
+<li><a href="www/fitsims.slurm">SLURM script</a></li>
 </ul>
 <p>Note that these are just example scripts, I haven’t made them self-contained so they won’t run for you. That said, the <code>fitsims.slurm</code> file should be a good starting point for your own SLURM scripts. In the directory with the SLURM script, you can submit the job:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> fitsims.slurm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -437,7 +424,7 @@ Code managed in e.g.&nbsp;a GitHub repo
 <li>Add module imports to your <code>.bashrc</code> file</li>
 <li>Add other customizations</li>
 <li>Set up <code>sshfs</code></li>
-<li><a href="https://www.posdefecology.net/post/compiling-r/">Compile your own R with MKL</a></li>
+<li><a href="../../posts/compiling-r-with-mkl-on-hyak/compiling-r-with-intel-compilers-and-mkl-on-hyak.html">Compile your own R with MKL</a></li>
 <li>Write your own module for everyone to use</li>
 </ul>
 

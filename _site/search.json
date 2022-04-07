@@ -4,7 +4,7 @@
     "href": "posts.html",
     "title": "Posts",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhyak\n\n\nR\n\n\n\n\nHow to compile the rgdal package and its dependencies.\n\n\n\n\n\n\nNov 3, 2020\n\n\nJohn Best\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nhyak\n\n\n\n\nNOTE: This information was accurate as of early 2020, but is now (April 2022) slightly out of date; e.g. the klone cluster is now available and interactive nodes are no longer a separate partition.\n\n\n\n\n\n\nFeb 24, 2020\n\n\nJohn Best\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQERM 597 Seminar\n\n\n\n\nQERM\n\n\nwebsite\n\n\n\n\nUse Git, GitHub, and blogdown to publish an example website on GitHub Pages\n\n\n\n\n\n\nJan 28, 2020\n\n\nJohn Best\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhyak\n\n\nR\n\n\n\n\nFirst, request a build node, which will have internet access. An hour of time should be enough to install R and a few packages. Building R (especially the suggested packages) can be sped up by using multiple build jobs.\n\n\n\n\n\n\nJan 10, 2020\n\n\nJohn Best\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nwebsite\n\n\nQuarto\n\n\nCV\n\n\n\n\nI first published my personal website using the blogdown pacakge. There were some great walkthroughs to get everything set up and I even had Netlify automatically build and deploy every commit I pushed to Github. The Academic (now Wowchemy) theme was a de facto standard among academics (surprise), and seemed like an obvious choice. It looked nice and basically let you build your CV as the front page of your website. And it has clearly filled a niche, now offering different layouts for research groups and other uses.\n\n\n\n\n\n\nApr 7, 2022\n\n\nJohn Best\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhyak\n\n\nR\n\n\n\n\nHow to compile the rgdal package and its dependencies.\n\n\n\n\n\n\nNov 3, 2020\n\n\nJohn Best\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nhyak\n\n\n\n\nNOTE: This information was accurate as of early 2020, but is now (April 2022) slightly out of date; e.g. the klone cluster is now available and interactive nodes are no longer a separate partition.\n\n\n\n\n\n\nFeb 24, 2020\n\n\nJohn Best\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQERM 597 Seminar\n\n\n\n\nQERM\n\n\nwebsite\n\n\n\n\nUse Git, GitHub, and blogdown to publish an example website on GitHub Pages\n\n\n\n\n\n\nJan 28, 2020\n\n\nJohn Best\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhyak\n\n\nR\n\n\n\n\nFirst, request a build node, which will have internet access. An hour of time should be enough to install R and a few packages. Building R (especially the suggested packages) can be sped up by using multiple build jobs.\n\n\n\n\n\n\nJan 10, 2020\n\n\nJohn Best\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -116,6 +116,13 @@
     "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#example-simulation-study",
     "title": "Introduction to Hyak",
     "section": "Example: Simulation study",
+    "text": "Example: Simulation study\n\nSpecify operating and estimation models\nSimulate 100 operating models\nFit 300 estimation models\nCalculate metrics\nSummarize results\n\nWhich steps are independent? Which step is the bottleneck? Are there steps that could be done together?"
+  },
+  {
+    "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#example-simulation-study-fig",
+    "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#example-simulation-study-fig",
+    "title": "Introduction to Hyak",
+    "section": "Example: Simulation study",
     "text": "Example: Simulation study\n\n\n\nSimulation study flow chart"
   },
   {
@@ -151,14 +158,14 @@
     "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#how-to-choose-a-node-type",
     "title": "Introduction to Hyak",
     "section": "How to choose a node type",
-    "text": "How to choose a node type\n\n\n\nChoosing a node type\n\n\n{{< figure src=“nodechoice.png” >}}"
+    "text": "How to choose a node type\n\n\n\nChoosing a node type"
   },
   {
     "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#request-an-interactive-node",
     "href": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#request-an-interactive-node",
     "title": "Introduction to Hyak",
     "section": "Request an interactive node",
-    "text": "Request an interactive node\n\nbuild node:\n\n\nsrun -p build --mem=10G --time=1:00:00 --pty /bin/bash\n\nstf-int node:\n\n\nsrun -p stf-int -A stf --cpus-per-task=28 --mem=120G\\\n    --time=1:00:00 --pty /bin/bash"
+    "text": "Request an interactive node\n\nbuild node:\n\nsrun -p build --mem=10G --time=1:00:00 --pty /bin/bash\n\nstf-int node:\n\nsrun -p stf-int -A stf --cpus-per-task=28 --mem=120G\\\n    --time=1:00:00 --pty /bin/bash"
   },
   {
     "objectID": "posts/puntlab-hyak-intro/puntlab_hyak_intro.html#relevant-slurm-arguments",
@@ -222,5 +229,12 @@
     "title": "Introduction to Hyak",
     "section": "Advanced usage",
     "text": "Advanced usage\n\nAdd module imports to your .bashrc file\nAdd other customizations\nSet up sshfs\nCompile your own R with MKL\nWrite your own module for everyone to use"
+  },
+  {
+    "objectID": "posts/moving-to-quarto/moving-to-quarto.html",
+    "href": "posts/moving-to-quarto/moving-to-quarto.html",
+    "title": "Moving to quarto",
+    "section": "",
+    "text": "Enter Quarto\nI’ve been hearing aboutQuarto for a while now, as a successor to the excellent R Markdown. It supports my two most-used languages, R and Julia. And it seemed pretty straightforward to generate a simple static website. I followed guide to making a blog and everything more or less worked. I renamed the about.qmd page to index.qmd so that it would show up as the front page, and renamed index.qmd to posts.qmd. Then I added a resources directory to the website options and added a PDF of my CV. Everything else was mostly filling in the blanks. I was able to copy-paste my older blog posts, rename them as .qmd files, then debug a couple of quick issues and they were up and running. A push to Github and pointing Netlify at the new repo and I was up and running. Not quite as convenient because I don’t have automatic builds anymore, but I’m willing to make that compromise.\nBecause the Quarto site doesn’t have the same outline for an academic CV, I decided it was time to make a new PDF version. I used the vitae package, filling everything in as tribbles, and ended up with a very nice-looking CV that should be easy to keep up-to-date. The source for that is available in this Github repo. In the future I may use the same document to generate an HTML version of my CV to include on my website, but for now the PDF will do."
   }
 ]

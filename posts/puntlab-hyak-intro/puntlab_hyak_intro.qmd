@@ -37,21 +37,12 @@ categories:
 4.  Calculate metrics
 5.  Summarize results
 
-
-## Example: Simulation study {#example-simulation-study}
-
-1.  Specify operating and estimation models
-2.  Simulate 100 operating models
-3.  Fit 300 estimation models
-4.  Calculate metrics
-5.  Summarize results
-
 Which steps are independent?
 Which step is the bottleneck?
 Are there steps that could be done together?
 
 
-## Example: Simulation study {#example-simulation-study}
+## Example: Simulation study {#example-simulation-study-fig}
 
 ![Simulation study flow chart](simstudy.png)
 
@@ -91,22 +82,16 @@ Keep your phone handy for 2FA!
 
 ![Choosing a node type](nodechoice.png)
 
-{{< figure src="nodechoice.png" >}}
-
 
 ## Request an interactive node {#request-an-interactive-node}
 
 -   `build` node:
-
-<!--listend-->
 
 ```bash
 srun -p build --mem=10G --time=1:00:00 --pty /bin/bash
 ```
 
 -   `stf-int` node:
-
-<!--listend-->
 
 ```bash
 srun -p stf-int -A stf --cpus-per-task=28 --mem=120G\
@@ -215,8 +200,8 @@ data, and `source`ing other files with functions etc. The SLURM script specifies
 the resources you need and how to run your driver script. Examples of scripts
 that I have used:
 
-- [Driver script](/ox-hugo/fitsims.R)
-- [SLURM script](/ox-hugo/fitsims.slurm)
+- [Driver script](www/fitsims.R)
+- [SLURM script](www/fitsims.slurm)
 
 Note that these are just example scripts, I haven't made them self-contained so
 they won't run for you. That said, the `fitsims.slurm` file should be a good
@@ -274,6 +259,6 @@ Tips:
 -   Add module imports to your `.bashrc` file
 -   Add other customizations
 -   Set up `sshfs`
--   [Compile your own R with MKL](https://www.posdefecology.net/post/compiling-r/)
+-   [Compile your own R with MKL](/posts/compiling-r-with-mkl-on-hyak/compiling-r-with-intel-compilers-and-mkl-on-hyak.qmd)
 -   Write your own module for everyone to use
 

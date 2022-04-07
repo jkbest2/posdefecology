@@ -1,0 +1,53 @@
+---
+title: Moving to `quarto`
+author: John Best
+date: 2022-04-07
+slug: moving-to-quarto
+categories:
+    - website
+    - Quarto
+    - CV
+summary: 'Moving my website to Quarto from Hugo Academic/Wowchemy'
+---
+
+# Academic/Wowchemy
+
+I first published my personal website using the `blogdown` pacakge. There were
+some great walkthroughs to get everything set up and I even had Netlify
+automatically build and deploy every commit I pushed to Github. The Academic
+(now Wowchemy) theme was a *de facto* standard among academics (surprise), and
+seemed like an obvious choice. It looked nice and basically let you build your
+CV as the front page of your website. And it has clearly filled a niche, now
+offering different layouts for research groups and other uses.
+
+As its use cases expanded, it got more complicated. Configuration moved from
+YAML to TOML at some point, configuration files and directories got moved
+around. I don't need to update my webisite very often, but every time I did I
+had to chase down multiple minor versions' worth of breaking changes, *and*
+remember to update Hugo.
+
+# Enter Quarto
+
+I've been hearing about[Quarto](https://quarto.org) for a while now, as a
+successor to the excellent R Markdown. It supports my two most-used languages, R
+and Julia. And it seemed pretty straightforward to generate a simple static
+website. I followed [guide to making a
+blog](https://quarto.org/docs/websites/website-blog.html) and everything more or
+less worked. I renamed the `about.qmd` page to `index.qmd` so that it would show
+up as the front page, and renamed `index.qmd` to `posts.qmd`. Then I added a
+`resources` directory to the website options and added a PDF of my CV.
+Everything else was mostly filling in the blanks. I was able to copy-paste my
+older blog posts, rename them as `.qmd` files, then debug a couple of quick
+issues and they were up and running. A push to Github and pointing Netlify at
+the new repo and I was up and running. Not *quite* as convenient because I don't
+have automatic builds anymore, but I'm willing to make that compromise.
+
+Because the Quarto site doesn't have the same outline for an academic CV, I
+decided it was time to make a new PDF version. I used the
+[`vitae`](https://pkg.mitchelloharawild.com/vitae/) package, filling everything
+in as `tribble`s, and ended up with a very nice-looking CV that should be easy
+to keep up-to-date. The source for that is available [in this Github
+repo](https://github.com/jkbest2/cv). In the future I may use the same document
+to generate an HTML version of my CV to include on my website, but for now the
+PDF will do.
+
