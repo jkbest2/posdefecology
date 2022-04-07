@@ -1,5 +1,5 @@
 ---
-title: Moving to `quarto`
+title: Moving to Quarto
 author: John Best
 date: 2022-04-07
 slug: moving-to-quarto
@@ -7,7 +7,7 @@ categories:
     - website
     - Quarto
     - CV
-summary: 'Moving my website to Quarto from Hugo Academic/Wowchemy'
+description: 'Moving my website to Quarto from Hugo Academic/Wowchemy'
 ---
 
 # Academic/Wowchemy
